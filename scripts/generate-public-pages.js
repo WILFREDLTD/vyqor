@@ -693,12 +693,12 @@ function buildPageSchema(page) {
         "@type": "Organization",
         name: "VYQOR LABS",
       },
-      publisher: {
+        publisher: {
         "@type": "Organization",
         name: "VYQOR LABS",
         logo: {
           "@type": "ImageObject",
-          url: `${BASE_URL}/vico.png`,
+          url: `${BASE_URL}/vyqor.svg`,
         },
       },
     };
@@ -743,7 +743,7 @@ function renderStructuredData(page) {
     "@type": "Organization",
     name: "VYQOR LABS",
     url: BASE_URL,
-    logo: `${BASE_URL}/vico.png`,
+    logo: `${BASE_URL}/vyqor.svg`,
     sameAs: [],
   };
 

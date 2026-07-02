@@ -15,19 +15,25 @@ export async function GET(req: Request) {
     const start = new Date(`${dateParam}T00:00:00`);
     const end = new Date(`${dateParam}T23:59:59.999`);
 
-    const consultations = await prisma.consultation.findMany({
-      where: {
-        selectedDate: {
-          gte: start,
-          lte: end,
+    // If persistence is disabled, do not query the database — return no booked times.
+    let bookedTimes: string[] = [];
+    if (process.env.DISABLE_DB !== 'true') {
+      const consultations = await prisma.consultation.findMany({
+        where: {
+          selectedDate: {
+            gte: start,
+            lte: end,
+          },
         },
-      },
-      select: {
-        selectedTime: true,
-      },
-    });
+        select: {
+          selectedTime: true,
+        },
+      });
 
-    const bookedTimes = consultations.map((c) => c.selectedTime);
+      bookedTimes = consultations.map((c) => c.selectedTime);
+    } else {
+      console.info('DB persistence disabled (DISABLE_DB=true) — returning empty bookedTimes.');
+    }
 
     return NextResponse.json({ bookedTimes });
   } catch (err: any) {

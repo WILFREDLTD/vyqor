@@ -22,20 +22,27 @@ export async function scheduleConsultation(data: {
     const meetLink = data.googleMeetLink && data.googleMeetLink.trim().length > 0
       ? data.googleMeetLink
       : process.env.GOOGLE_MEET_URL || process.env.GOOGLE_MEET_LINK || "";
-    // Save to DB
-    const consultation = await prisma.consultation.create({
-      data: {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        email: data.email,
-        phone: data.phone,
-        service: data.service,
-        selectedDate: data.selectedDate,
-        selectedTime: data.selectedTime,
-        additionalNotes: data.additionalNotes || null,
-        googleMeetLink: meetLink,
-      },
-    });
+    // Save to DB (disabled when DISABLE_DB=true). We keep the code here
+    // but skip executing it when persistence is disabled so data is not stored.
+    let consultation: any = null;
+    if (process.env.DISABLE_DB !== "true") {
+      consultation = await prisma.consultation.create({
+        data: {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          selectedDate: data.selectedDate,
+          selectedTime: data.selectedTime,
+          additionalNotes: data.additionalNotes || null,
+          googleMeetLink: meetLink,
+        },
+      });
+    } else {
+      // If DB writes are disabled, log minimal info for debugging but do not persist
+      console.info("DB persistence disabled (DISABLE_DB=true) — consultation will not be stored.");
+    }
 
     // Configure transporter
     const transporter = nodemailer.createTransport({
@@ -254,7 +261,7 @@ export async function scheduleConsultation(data: {
       transporter.sendMail(companyMailOptions),
     ]);
 
-    return { success: true, consultationId: consultation.id };
+    return { success: true, consultationId: consultation ? consultation.id : null };
   } catch (error: any) {
     console.error("Error scheduling consultation:", error);
     return { success: false, error: error.message || "Failed to schedule consultation" };

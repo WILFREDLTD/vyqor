@@ -176,19 +176,22 @@ export default function Footer() {
                   style={{ background: "linear-gradient(135deg, #4ade80, #22d3ee)" }}
                 />
                 <Image
-                  src="/vico.png"
+                  src="/vyqor.svg"
                   alt="VYQOR LABS"
                   width={500}
                   height={500}
                   className="relative w-11 h-11 rounded-full border border-green-500/30"
                 />
               </div>
-              <span
-                className="text-xl font-black text-white"
-                style={{ fontFamily: "'Syne', sans-serif" }}
-              >
-                VYQOR LABS
-              </span>
+              <div>
+                <span
+                  className="text-2xl font-black text-white"
+                  style={{ fontFamily: "'Syne', sans-serif" }}
+                >
+                  VYQOR LABS
+                </span>
+                <div className="text-xs text-gray-400 mt-1">Reg no -BN-VZSE9OY9</div>
+              </div>
             </div>
 
             {/* Tagline */}
