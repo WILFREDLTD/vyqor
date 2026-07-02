@@ -698,7 +698,7 @@ function buildPageSchema(page) {
         name: "VYQOR LABS",
         logo: {
           "@type": "ImageObject",
-          url: `${BASE_URL}/vyqor.svg`,
+          url: `${BASE_URL}/vyqor.png`,
         },
       },
     };
@@ -743,7 +743,7 @@ function renderStructuredData(page) {
     "@type": "Organization",
     name: "VYQOR LABS",
     url: BASE_URL,
-    logo: `${BASE_URL}/vyqor.svg`,
+    logo: `${BASE_URL}/vyqor.png`,
     sameAs: [],
   };
 

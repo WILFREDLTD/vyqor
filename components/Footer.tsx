@@ -176,10 +176,10 @@ export default function Footer() {
                   style={{ background: "linear-gradient(135deg, #4ade80, #22d3ee)" }}
                 />
                 <Image
-                  src="/vyqor.svg"
+                  src="/logo_vyqor.png"
                   alt="VYQOR LABS"
-                  width={500}
-                  height={500}
+                  width={300}
+                  height={300}
                   className="relative w-11 h-11 rounded-full border border-green-500/30"
                 />
               </div>

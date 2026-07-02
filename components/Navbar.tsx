@@ -166,31 +166,30 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-[72px]">
 
             {/* ── Logo ── */}
-            <Link href="/" className="shrink-0 flex items-center gap-2.5 group">
-              <div className="relative">
+            <div className="flex items-center h-16 md:h-[72px] pr-3">
+              <div
+                className="relative flex items-center justify-center rounded-full overflow-hidden transition-all duration-300"
+                style={{ width: "56px", height: "56px", background: "linear-gradient(135deg, #071617, #05200e)" }}
+              >
                 <div
-                  className="absolute inset-0 rounded-full transition-all duration-300"
-                  style={{
-                    background: "linear-gradient(135deg, #4ade80, #22d3ee)",
-                    opacity: 0,
-                    filter: "blur(8px)",
-                  }}
+                  className="absolute inset-0 rounded-full"
+                  style={{ background: "linear-gradient(135deg, #4ade80, #22d3ee)", opacity: 0.06, filter: "blur(8px)" }}
                 />
                 <Image
-                  src="/vyqor.svg"
+                  src="/vyqor.png"
                   alt="VYQOR LABS"
                   width={200}
-                  height={100}
-                  className="relative w-auto h-9 md:h-11 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+                  height={200}
+                  className="relative h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <span
-                className="brand-name hidden sm:block"
+                className="brand-name hidden sm:block ml-3"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 VYQOR LABS
               </span>
-            </Link>
+            </div>
 
             {/* ── Desktop Nav ── */}
             <div className="hidden lg:flex items-center gap-1">
@@ -362,7 +361,7 @@ export default function Navbar() {
               style={{ borderColor: "rgba(74,222,128,0.1)" }}
             >
               <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                <Image src="/vyqor.svg" alt="VYQOR LABS" width={100} height={100} className="w-8 h-8 rounded-full" />
+                <Image src="/vyqor.png" alt="VYQOR LABS" width={100} height={100} className="w-8 h-8 rounded-full" />
                 <span
                   className="text-xl font-black text-white"
                   style={{ fontFamily: "'Syne', sans-serif" }}
