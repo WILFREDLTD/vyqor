@@ -1,0 +1,7 @@
+[build]
+  command = "pnpm exec prisma migrate deploy && pnpm exec prisma generate && pnpm build"
+  publish = ".next"
+  environment = { NODE_ENV = "production" }
+
+[context.production.environment]
+  NODE_ENV = "production"
