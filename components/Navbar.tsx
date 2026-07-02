@@ -178,7 +178,7 @@ export default function Navbar() {
                 />
                 <Image
                   src="/vico.png"
-                  alt="vico softwares"
+                  alt="VYQOR LABS"
                   width={200}
                   height={100}
                   className="relative w-auto h-9 md:h-11 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
@@ -188,7 +188,7 @@ export default function Navbar() {
                 className="brand-name hidden sm:block"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                vico softwares
+                VYQOR LABS
               </span>
             </Link>
 
@@ -362,12 +362,12 @@ export default function Navbar() {
               style={{ borderColor: "rgba(74,222,128,0.1)" }}
             >
               <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                <Image src="/vico.png" alt="vico softwares" width={100} height={100} className="w-8 h-8 rounded-full" />
+                <Image src="/vico.png" alt="VYQOR LABS" width={100} height={100} className="w-8 h-8 rounded-full" />
                 <span
                   className="text-base font-black text-white"
                   style={{ fontFamily: "'Syne', sans-serif" }}
                 >
-                  vico softwares
+                  VYQOR LABS
                 </span>
               </Link>
               <button

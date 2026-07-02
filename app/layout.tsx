@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "vico softwares",
+  title: "VYQOR LABS",
   description:
-    "vico softwares delivers innovative digital solutions that help businesses thrive in a rapidly evolving technological landscape.",
+    "VYQOR LABS delivers innovative digital solutions that help businesses thrive in a rapidly evolving technological landscape.",
 };
 
 export default function RootLayout({

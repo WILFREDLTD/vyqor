@@ -177,7 +177,7 @@ export default function Footer() {
                 />
                 <Image
                   src="/vico.png"
-                  alt="vico softwares"
+                  alt="VYQOR LABS"
                   width={500}
                   height={500}
                   className="relative w-11 h-11 rounded-full border border-green-500/30"
@@ -187,7 +187,7 @@ export default function Footer() {
                 className="text-xl font-black text-white"
                 style={{ fontFamily: "'Syne', sans-serif" }}
               >
-                vico softwares
+                VYQOR LABS
               </span>
             </div>
 
@@ -272,13 +272,13 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
 
           {/* Copyright */}
-          <p className="text-xs text-gray-600 order-2 md:order-1 text-center md:text-left">
+            <p className="text-xs text-gray-600 order-2 md:order-1 text-center md:text-left">
             {copyRightNotice()}{" "}
             <span
               className="font-bold text-transparent bg-clip-text"
               style={{ backgroundImage: "linear-gradient(135deg, #4ade80, #22d3ee)" }}
             >
-              vico softwares
+              VYQOR LABS
             </span>
             {" "}· All rights reserved · Engineered in Africa.
           </p>

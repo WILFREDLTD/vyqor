@@ -178,7 +178,7 @@ export default function CTASection() {
                   ))}
                 </div>
                 <div>
-                  <p className="text-white text-sm font-bold">80+ businesses trust vico softwares</p>
+                  <p className="text-white text-sm font-bold">80+ businesses trust VYQOR LABS</p>
                   <p className="text-gray-400 text-sm">across retail, fintech, and enterprise</p>
                 </div>
                 <div className="ml-auto flex items-center gap-1">

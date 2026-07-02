@@ -135,7 +135,7 @@ export async function scheduleConsultation(data: {
             <!-- Footer -->
             <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e0e0e0;">
               <p style="color: #999; font-size: 12px; margin: 0 0 10px 0;">
-                vico softwares
+                VYQOR LABS
               </p>
               <p style="color: #bbb; font-size: 11px; margin: 0;">
                 This email contains your consultation confirmation. Please keep it for your records.
@@ -236,7 +236,7 @@ export async function scheduleConsultation(data: {
             <!-- Footer -->
             <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e0e0e0;">
               <p style="color: #999; font-size: 12px; margin: 0 0 10px 0;">
-                vico softwares - Consultation Management
+                VYQOR LABS - Consultation Management
               </p>
               <p style="color: #bbb; font-size: 11px; margin: 0;">
                 This is an automated notification. Please do not reply to this email.

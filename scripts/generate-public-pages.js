@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const BASE_URL = "https://vicotech.netlify.app";
+const BASE_URL = "https://vyqor.netlify.app";
 const today = new Date().toISOString().slice(0, 10);
 
 const navLinks = [
@@ -18,8 +18,8 @@ const navLinks = [
 const pages = [
   {
     route: "/about",
-    title: "About | VicoTech",
-    description: "VicoTech is an African infrastructure engineering company focused on backend systems, integrations, and enterprise-grade reliability.",
+    title: "About | VYQOR LABS",
+    description: "VYQOR LABS is an African infrastructure engineering company focused on backend systems, integrations, and enterprise-grade reliability.",
     keywords: "infrastructure engineering, African fintech, enterprise systems, reliability",
     heroLabel: "About",
     heroTitle: "Infrastructure engineering for African businesses",
@@ -37,8 +37,8 @@ const pages = [
   },
   {
     route: "/contact",
-    title: "Contact | VicoTech",
-    description: "Contact VicoTech for enterprise integrations, backend architecture, cloud operations, and technical partnerships.",
+    title: "Contact | VYQOR LABS",
+    description: "Contact VYQOR LABS for enterprise integrations, backend architecture, cloud operations, and technical partnerships.",
     keywords: "enterprise contact, architecture consultation, fintech partnerships, infrastructure inquiry",
     heroLabel: "Contact",
     heroTitle: "Talk to a systems engineering team",
@@ -52,7 +52,7 @@ const pages = [
   },
   {
     route: "/services",
-    title: "Services | VicoTech",
+    title: "Services | VYQOR LABS",
     description: "Services for backend engineering, cloud operations, payment integrations, API development, and enterprise systems.",
     keywords: "backend engineering, cloud DevOps, payment integrations, API development, enterprise systems",
     heroLabel: "Services",
@@ -66,7 +66,7 @@ const pages = [
   },
   {
     route: "/services/backend-engineering",
-    title: "Backend Engineering | VicoTech",
+    title: "Backend Engineering | VYQOR LABS",
     description: "Scalable backend engineering for APIs, microservices, event pipelines, and reliable transaction processing.",
     keywords: "backend engineering, microservices, event-driven architecture, APIs, transaction processing",
     heroLabel: "Service",
@@ -79,7 +79,7 @@ const pages = [
   },
   {
     route: "/services/payment-integrations",
-    title: "Payment Integrations | VicoTech",
+    title: "Payment Integrations | VYQOR LABS",
     description: "Payment integration services for M-Pesa, banking APIs, POS systems, and reconciliation workflows.",
     keywords: "payment integrations, M-Pesa, banking APIs, POS integration, reconciliation",
     heroLabel: "Service",
@@ -92,7 +92,7 @@ const pages = [
   },
   {
     route: "/services/cloud-devops",
-    title: "Cloud & DevOps | VicoTech",
+    title: "Cloud & DevOps | VYQOR LABS",
     description: "Cloud architecture and DevOps services for infrastructure automation, observability, and deployment reliability.",
     keywords: "cloud architecture, DevOps, infrastructure automation, observability, CI/CD",
     heroLabel: "Service",
@@ -105,7 +105,7 @@ const pages = [
   },
   {
     route: "/services/api-development",
-    title: "API Development | VicoTech",
+    title: "API Development | VYQOR LABS",
     description: "Enterprise API development for secure integrations, developer adoption, and platform extensibility.",
     keywords: "API development, API architecture, developer portals, secure APIs, enterprise APIs",
     heroLabel: "Service",
@@ -118,7 +118,7 @@ const pages = [
   },
   {
     route: "/services/enterprise-systems",
-    title: "Enterprise Systems | VicoTech",
+    title: "Enterprise Systems | VYQOR LABS",
     description: "Enterprise systems services for ERP, operations platforms, and integration-ready infrastructure.",
     keywords: "enterprise systems, ERP, operations platforms, enterprise infrastructure",
     heroLabel: "Service",
@@ -131,7 +131,7 @@ const pages = [
   },
   {
     route: "/services/cybersecurity",
-    title: "Cybersecurity | VicoTech",
+    title: "Cybersecurity | VYQOR LABS",
     description: "Cybersecurity services for infrastructure hardening, access control, encryption, and audit readiness.",
     keywords: "cybersecurity, access control, encryption, audit readiness, infrastructure security",
     heroLabel: "Service",
@@ -144,7 +144,7 @@ const pages = [
   },
   {
     route: "/services/mobile-development",
-    title: "Mobile Development | VicoTech",
+    title: "Mobile Development | VYQOR LABS",
     description: "Mobile development services for cross-platform apps, native experiences, and backend integrations.",
     keywords: "mobile development, React Native, Flutter, native iOS, native Android, backend integration",
     heroLabel: "Service",
@@ -157,7 +157,7 @@ const pages = [
   },
   {
     route: "/services/ecommerce-platforms",
-    title: "E-commerce Platforms | VicoTech",
+    title: "E-commerce Platforms | VYQOR LABS",
     description: "E-commerce platform engineering for checkout, inventory, payments, and complex retail operations.",
     keywords: "ecommerce platforms, checkout systems, inventory management, retail infrastructure",
     heroLabel: "Service",
@@ -170,7 +170,7 @@ const pages = [
   },
   {
     route: "/solutions",
-    title: "Solutions | VicoTech",
+    title: "Solutions | VYQOR LABS",
     description: "Solution platforms for retail operations, analytics, notifications, and enterprise infrastructure.",
     keywords: "solutions, retail infrastructure, analytics platforms, notifications, enterprise systems",
     heroLabel: "Solutions",
@@ -184,7 +184,7 @@ const pages = [
   },
   {
     route: "/solutions/erp-systems",
-    title: "ERP Systems | VicoTech",
+    title: "ERP Systems | VYQOR LABS",
     description: "ERP systems for inventory, finance, supply chain, and enterprise workflow orchestration.",
     keywords: "ERP systems, enterprise resource planning, inventory systems, supply chain",
     heroLabel: "Solution",
@@ -197,7 +197,7 @@ const pages = [
   },
   {
     route: "/solutions/retail-infrastructure",
-    title: "Retail Infrastructure | VicoTech",
+    title: "Retail Infrastructure | VYQOR LABS",
     description: "Retail infrastructure platforms for POS integration, inventory control, payment reconciliation, and omnichannel operations.",
     keywords: "retail infrastructure, POS integration, inventory control, payment reconciliation",
     heroLabel: "Solution",
@@ -210,7 +210,7 @@ const pages = [
   },
   {
     route: "/solutions/analytics-platforms",
-    title: "Analytics Platforms | VicoTech",
+    title: "Analytics Platforms | VYQOR LABS",
     description: "Analytics platforms for operational reporting, dashboards, and data-driven decision making.",
     keywords: "analytics platforms, reporting, dashboards, operational intelligence",
     heroLabel: "Solution",
@@ -223,7 +223,7 @@ const pages = [
   },
   {
     route: "/solutions/notification-systems",
-    title: "Notification Systems | VicoTech",
+    title: "Notification Systems | VYQOR LABS",
     description: "Notification systems for transactional alerts, customer messaging, and operational workflows.",
     keywords: "notification systems, transactional alerts, customer messaging, operational workflows",
     heroLabel: "Solution",
@@ -236,7 +236,7 @@ const pages = [
   },
   {
     route: "/industries",
-    title: "Industries | VicoTech",
+    title: "Industries | VYQOR LABS",
     description: "Industry-focused infrastructure for fintech, retail, logistics, healthcare, and sports operations.",
     keywords: "industry infrastructure, fintech, retail, logistics, healthcare, sports",
     heroLabel: "Industries",
@@ -250,7 +250,7 @@ const pages = [
   },
   {
     route: "/industries/retail",
-    title: "Retail Infrastructure | VicoTech",
+    title: "Retail Infrastructure | VYQOR LABS",
     description: "Retail infrastructure engineering for POS, inventory, payments, and omnichannel operations.",
     keywords: "retail infrastructure, POS, inventory, omnichannel, payments",
     heroLabel: "Industry",
@@ -263,7 +263,7 @@ const pages = [
   },
   {
     route: "/industries/fintech",
-    title: "Fintech Infrastructure | VicoTech",
+    title: "Fintech Infrastructure | VYQOR LABS",
     description: "Fintech infrastructure for payments, ledgers, reconciliation, and secure operations.",
     keywords: "fintech infrastructure, payments, reconciliation, ledgers, financial platforms",
     heroLabel: "Industry",
@@ -276,7 +276,7 @@ const pages = [
   },
   {
     route: "/industries/logistics",
-    title: "Logistics Infrastructure | VicoTech",
+    title: "Logistics Infrastructure | VYQOR LABS",
     description: "Logistics infrastructure for tracking, routing, delivery orchestration, and operational visibility.",
     keywords: "logistics infrastructure, tracking, routing, delivery, operational visibility",
     heroLabel: "Industry",
@@ -289,7 +289,7 @@ const pages = [
   },
   {
     route: "/industries/healthcare",
-    title: "Healthcare Infrastructure | VicoTech",
+    title: "Healthcare Infrastructure | VYQOR LABS",
     description: "Healthcare infrastructure for secure data flows, patient operations, and compliant integrations.",
     keywords: "healthcare infrastructure, secure data, compliance, patient operations",
     heroLabel: "Industry",
@@ -302,7 +302,7 @@ const pages = [
   },
   {
     route: "/industries/sports",
-    title: "Sports Infrastructure | VicoTech",
+    title: "Sports Infrastructure | VYQOR LABS",
     description: "Sports technology infrastructure for ticketing, events, registrations, and performance operations.",
     keywords: "sports infrastructure, event systems, ticketing, registration, performance",
     heroLabel: "Industry",
@@ -315,7 +315,7 @@ const pages = [
   },
   {
     route: "/security",
-    title: "Security | VicoTech",
+    title: "Security | VYQOR LABS",
     description: "Infrastructure security services for TLS, RBAC, audit logs, compliance readiness, and disaster recovery.",
     keywords: "security, TLS, RBAC, audit logs, disaster recovery, compliance",
     heroLabel: "Security",
@@ -328,7 +328,7 @@ const pages = [
   },
   {
     route: "/integrations",
-    title: "Integrations | VicoTech",
+    title: "Integrations | VYQOR LABS",
     description: "Integration services for M-Pesa, banking APIs, ERP, POS, and accounting systems.",
     keywords: "integrations, M-Pesa, banking APIs, ERP, POS, accounting",
     heroLabel: "Integrations",
@@ -342,7 +342,7 @@ const pages = [
   },
   {
     route: "/integrations/mpesa",
-    title: "M-Pesa Integrations | VicoTech",
+    title: "M-Pesa Integrations | VYQOR LABS",
     description: "M-Pesa integration services for payment acceptance, reconciliation, and operational flows.",
     keywords: "M-Pesa integrations, mobile money, payment acceptance, reconciliation",
     heroLabel: "Integration",
@@ -355,7 +355,7 @@ const pages = [
   },
   {
     route: "/integrations/banking",
-    title: "Banking Integrations | VicoTech",
+    title: "Banking Integrations | VYQOR LABS",
     description: "Banking API integration services for transfers, settlements, and account orchestration.",
     keywords: "banking integrations, banking APIs, transfers, settlements",
     heroLabel: "Integration",
@@ -368,7 +368,7 @@ const pages = [
   },
   {
     route: "/integrations/erp",
-    title: "ERP Integrations | VicoTech",
+    title: "ERP Integrations | VYQOR LABS",
     description: "ERP integration services that connect finance, inventory, and operational systems.",
     keywords: "ERP integrations, finance systems, inventory systems, operational integration",
     heroLabel: "Integration",
@@ -381,7 +381,7 @@ const pages = [
   },
   {
     route: "/integrations/pos",
-    title: "POS Integrations | VicoTech",
+    title: "POS Integrations | VYQOR LABS",
     description: "POS integration services for retail checkout, inventory updates, and reconciled transactions.",
     keywords: "POS integrations, retail checkout, inventory updates, transaction reconciliation",
     heroLabel: "Integration",
@@ -394,7 +394,7 @@ const pages = [
   },
   {
     route: "/integrations/accounting",
-    title: "Accounting Integrations | VicoTech",
+    title: "Accounting Integrations | VYQOR LABS",
     description: "Accounting system integration services for ledger synchronization and financial reporting.",
     keywords: "accounting integrations, ledger sync, financial reporting, ERP accounting",
     heroLabel: "Integration",
@@ -407,7 +407,7 @@ const pages = [
   },
   {
     route: "/engineering",
-    title: "Engineering | VicoTech",
+    title: "Engineering | VYQOR LABS",
     description: "Engineering and architecture services for event-driven systems, observability, reliability, and scalable deployments.",
     keywords: "engineering, architecture, event-driven systems, observability, reliability",
     heroLabel: "Engineering",
@@ -420,7 +420,7 @@ const pages = [
   },
   {
     route: "/insights",
-    title: "Insights | VicoTech",
+    title: "Insights | VYQOR LABS",
     description: "Insights on payment systems, observability, event-driven architecture, and infrastructure strategy.",
     keywords: "insights, payment systems, observability, event driven architecture, infrastructure strategy",
     heroLabel: "Insights",
@@ -434,7 +434,7 @@ const pages = [
   },
   {
     route: "/insights/event-driven-architecture",
-    title: "Event-Driven Architecture | VicoTech",
+    title: "Event-Driven Architecture | VYQOR LABS",
     description: "Insights on event-driven architecture, asynchronous flows, and resilient system design.",
     keywords: "event-driven architecture, asynchronous systems, resilient design, infrastructure insights",
     heroLabel: "Insight",
@@ -447,7 +447,7 @@ const pages = [
   },
   {
     route: "/insights/scaling-fintech-systems",
-    title: "Scaling Fintech Systems | VicoTech",
+    title: "Scaling Fintech Systems | VYQOR LABS",
     description: "Insights on scaling fintech platforms, payment resiliency, and operational stability.",
     keywords: "scaling fintech systems, payment resiliency, operational stability, infrastructure insights",
     heroLabel: "Insight",
@@ -460,7 +460,7 @@ const pages = [
   },
   {
     route: "/insights/mpesa-integration-patterns",
-    title: "M-Pesa Integration Patterns | VicoTech",
+    title: "M-Pesa Integration Patterns | VYQOR LABS",
     description: "Insights on M-Pesa integration patterns, reconciliation, and transaction orchestration.",
     keywords: "M-Pesa integration patterns, reconciliation, transaction orchestration, insights",
     heroLabel: "Insight",
@@ -473,7 +473,7 @@ const pages = [
   },
   {
     route: "/insights/backend-observability",
-    title: "Backend Observability | VicoTech",
+    title: "Backend Observability | VYQOR LABS",
     description: "Insights on backend observability, dashboards, logs, and incident readiness.",
     keywords: "backend observability, logs, dashboards, incident readiness, infrastructure insights",
     heroLabel: "Insight",
@@ -486,7 +486,7 @@ const pages = [
   },
   {
     route: "/case-studies",
-    title: "Case Studies | VicoTech",
+    title: "Case Studies | VYQOR LABS",
     description: "Case studies showing infrastructure architecture, problem solving, and measurable outcomes.",
     keywords: "case studies, infrastructure architecture, problem solving, outcomes",
     heroLabel: "Case Studies",
@@ -500,7 +500,7 @@ const pages = [
   },
   {
     route: "/case-studies/payment-infrastructure",
-    title: "Payment Infrastructure Case Study | VicoTech",
+    title: "Payment Infrastructure Case Study | VYQOR LABS",
     description: "A case study on building payment infrastructure, reconciliation, and transaction reliability.",
     keywords: "payment infrastructure case study, reconciliation, transaction reliability",
     heroLabel: "Case Study",
@@ -513,7 +513,7 @@ const pages = [
   },
   {
     route: "/case-studies/retail-automation",
-    title: "Retail Automation Case Study | VicoTech",
+    title: "Retail Automation Case Study | VYQOR LABS",
     description: "A case study on retail automation, POS connectivity, and inventory control.",
     keywords: "retail automation case study, POS connectivity, inventory control",
     heroLabel: "Case Study",
@@ -526,7 +526,7 @@ const pages = [
   },
   {
     route: "/case-studies/logistics-dashboard",
-    title: "Logistics Dashboard Case Study | VicoTech",
+    title: "Logistics Dashboard Case Study | VYQOR LABS",
     description: "A case study on building logistics dashboards for delivery tracking and operational control.",
     keywords: "logistics dashboard case study, delivery tracking, operational control",
     heroLabel: "Case Study",
@@ -599,7 +599,7 @@ function buildPageSchema(page) {
       "@type": "ContactPage",
       potentialAction: {
         "@type": "CommunicateAction",
-        name: "Contact VicoTech",
+        name: "Contact VYQOR LABS",
       },
     };
   }
@@ -611,11 +611,11 @@ function buildPageSchema(page) {
       description: page.description,
       provider: {
         "@type": "Organization",
-        name: "VicoTech",
+        name: "VYQOR LABS",
         url: BASE_URL,
       },
       areaServed: "Africa",
-      serviceType: page.title.replace(" | VicoTech", ""),
+      serviceType: page.title.replace(" | VYQOR LABS", ""),
       url: pageUrl,
     };
   }
@@ -639,7 +639,7 @@ function buildPageSchema(page) {
       description: page.description,
       brand: {
         "@type": "Brand",
-        name: "VicoTech",
+        name: "VYQOR LABS",
       },
       url: pageUrl,
     };
@@ -665,7 +665,7 @@ function buildPageSchema(page) {
       url: pageUrl,
       about: {
         "@type": "Thing",
-        name: page.title.replace(" | VicoTech", ""),
+        name: page.title.replace(" | VYQOR LABS", ""),
       },
     };
   }
@@ -691,11 +691,11 @@ function buildPageSchema(page) {
       datePublished: today,
       author: {
         "@type": "Organization",
-        name: "VicoTech",
+        name: "VYQOR LABS",
       },
       publisher: {
         "@type": "Organization",
-        name: "VicoTech",
+        name: "VYQOR LABS",
         logo: {
           "@type": "ImageObject",
           url: `${BASE_URL}/vico.png`,
@@ -714,11 +714,11 @@ function buildPageSchema(page) {
       articleSection: "Case Study",
       author: {
         "@type": "Organization",
-        name: "VicoTech",
+        name: "VYQOR LABS",
       },
       publisher: {
         "@type": "Organization",
-        name: "VicoTech",
+        name: "VYQOR LABS",
       },
     };
   }
@@ -738,10 +738,10 @@ function buildPageSchema(page) {
 }
 
 function renderStructuredData(page) {
-  const organization = {
+    const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "VicoTech",
+    name: "VYQOR LABS",
     url: BASE_URL,
     logo: `${BASE_URL}/vico.png`,
     sameAs: [],
@@ -780,7 +780,7 @@ function buildHtml(page) {
 <body>
   <div class="container">
     <header>
-      <div class="brand brand-gradient">vico softwares</div>
+      <div class="brand brand-gradient">VYQOR LABS</div>
       <nav>
         ${renderNav()}
       </nav>
@@ -796,7 +796,7 @@ function buildHtml(page) {
       ${renderSections(page.sections || [])}
     </main>
     <footer>
-      <div class="muted">VicoTech — Infrastructure engineering for enterprise systems. <a href="${BASE_URL}">Official site</a></div>
+      <div class="muted">VYQOR LABS — Infrastructure engineering for enterprise systems. <a href="${BASE_URL}">Official site</a></div>
     </footer>
   </div>
   <script type="application/ld+json">

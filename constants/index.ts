@@ -241,7 +241,7 @@ export const teamMembers = [
       github: "https://github.com/samuelnmu",
     },
     description:
-      "Samuel is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of vico softwares, he leads the company's mission to drive digital transformation.",
+      "Samuel is a Software Engineer and entrepreneur with a background in Economics. As founder and CEO of VYQOR LABS, he leads the company's mission to drive digital transformation.",
   },
 
   // 📋 Project Management
