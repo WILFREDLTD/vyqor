@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   title: "VYQOR LABS",
   description:
     "VYQOR LABS delivers innovative digital solutions that help businesses thrive in a rapidly evolving technological landscape.",
+  icons: {
+    icon: "/logo_vyqor.png",
+  },
 };
 
 export default function RootLayout({
