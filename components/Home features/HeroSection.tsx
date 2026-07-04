@@ -107,7 +107,7 @@ export default function HeroSection() {
 
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+                style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
             >
               <span className="text-white">Transforming Ideas Into</span>{" "}
               <span
@@ -238,9 +238,7 @@ export default function HeroSection() {
       </div>
 
   
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
-      `}</style>
+      
     </section>
   );
 }

@@ -75,7 +75,7 @@ export default function VisionProblemSection() {
 
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4"
-            style={{ fontFamily: "'Syne', sans-serif" }}
+              style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
           >
             <span className="text-white">Purpose-Driven.</span>{" "}
             <span
@@ -122,7 +122,7 @@ export default function VisionProblemSection() {
                 </div>
                 <h3
                   className="text-xl md:text-2xl font-black mb-3 text-white"
-                  style={{ fontFamily: "'Syne', sans-serif" }}
+                    style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
                 >
                   Where We're Headed
                 </h3>
@@ -151,7 +151,7 @@ export default function VisionProblemSection() {
                 </div>
                 <h3
                   className="text-xl md:text-2xl font-black mb-3 text-white"
-                  style={{ fontFamily: "'Syne', sans-serif" }}
+                    style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
                 >
                   Why We Show Up Daily
                 </h3>
@@ -251,7 +251,7 @@ export default function VisionProblemSection() {
             </div>
             <h3
               className="text-xl md:text-3xl font-black text-white mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
             >
               Software That Actually Fits Your Reality
             </h3>
@@ -281,7 +281,6 @@ export default function VisionProblemSection() {
 
       {/* Font */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
         .line-grow { width: 120px !important; }
       `}</style>
     </section>

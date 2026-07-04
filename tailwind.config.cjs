@@ -20,8 +20,10 @@ export default defineConfig({
         "qe-muted": "#4B5563",
       },
       fontFamily: {
-        primary: ["Inter", "sans-serif"],
-        secondary: ["Merriweather", "serif"],
+        // Use CSS variables injected by next/font (Inter, Syne, Outfit)
+        primary: ["var(--font-primary)", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial"],
+        display: ["var(--font-display)", "var(--font-primary)", "system-ui"],
+        ui: ["var(--font-ui)", "var(--font-primary)", "system-ui"],
       },
       maxWidth: {
         "7xl": "1280px",

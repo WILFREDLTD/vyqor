@@ -106,7 +106,7 @@ export default function Footer() {
               </div>
               <h3
                 className="text-xl sm:text-2xl font-black text-white mb-2 leading-tight"
-                style={{ fontFamily: "'Syne', sans-serif" }}
+                  style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
               >
                 Insights Straight to{" "}
                 <span
@@ -186,7 +186,7 @@ export default function Footer() {
               <div>
                 <span
                   className="text-2xl font-black text-white"
-                  style={{ fontFamily: "'Syne', sans-serif" }}
+                  style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
                 >
                   VYQOR LABS
                 </span>
@@ -203,22 +203,44 @@ export default function Footer() {
             {/* Contact details */}
             <div className="space-y-3">
               {[
-                { icon: TbMail, value: "kimaniwilfred95@gmail.com" },
-                { icon: PiPhoneDuotone, value: "+254 793 056 960" },
-                { icon: PiMapPinArea, value: "Kilifi, Kenya" },
-              ].map(({ icon: Icon, value }, i) => (
-                <div key={i} className="flex items-center gap-3 group">
-                  <div
-                    className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                    style={{ background: "rgba(74,222,128,0.1)", border: "1px solid rgba(74,222,128,0.2)" }}
-                  >
-                    <Icon size={13} style={{ color: "#4ade80" }} />
+                { icon: TbMail, value: "kimaniwilfred95@gmail.com", href: null },
+                { icon: PiPhoneDuotone, value: "+254791614036", href: "https://wa.me/254791614036?text=hello%20VYQOR" },
+                { icon: PiMapPinArea, value: "Kilifi, Kenya", href: null },
+              ].map(({ icon: Icon, value, href }, i) => {
+                const content = (
+                  <>
+                    <div
+                      className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ background: "rgba(74,222,128,0.1)", border: "1px solid rgba(74,222,128,0.2)" }}
+                    >
+                      <Icon size={13} style={{ color: "#4ade80" }} />
+                    </div>
+                    <span className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-300 transition-colors">
+                      {value}
+                    </span>
+                  </>
+                );
+
+                if (href) {
+                  return (
+                    <a
+                      key={i}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 group"
+                    >
+                      {content}
+                    </a>
+                  );
+                }
+
+                return (
+                  <div key={i} className="flex items-center gap-3 group">
+                    {content}
                   </div>
-                  <span className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-300 transition-colors">
-                    {value}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Social icons */}
@@ -302,9 +324,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
-      `}</style>
+      
     </footer>
   );
 }

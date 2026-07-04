@@ -162,7 +162,7 @@ export default function ServicesSection() {
 
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-5"
-            style={{ fontFamily: "'Syne', sans-serif" }}
+              style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
           >
             <span className="text-white">Everything Your Business Needs</span>
             <br />
@@ -254,7 +254,7 @@ export default function ServicesSection() {
 
                   <h3
                     className="text-base font-black text-white leading-snug"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
                   >
                     {service.title}
                   </h3>
@@ -315,9 +315,7 @@ export default function ServicesSection() {
         </div>
       </div>
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
-      `}</style>
+      
     </section>
   );
 }

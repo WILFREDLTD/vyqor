@@ -57,7 +57,7 @@ export function DateSelectionStep({ form, isPending }: DateSelectionStepProps) {
 
         <h3
           className="text-sm font-black text-white"
-          style={{ fontFamily: "'Syne', sans-serif" }}
+          style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
         >
           {format(calendarMonth, "MMMM yyyy")}
         </h3>

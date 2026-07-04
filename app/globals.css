@@ -9,12 +9,22 @@
     --color-accent: #FFD66B;
     --color-text: #1F2937;
     --color-muted: #4B5563;
-    --font-primary: 'Inter', sans-serif;
-    --font-secondary: 'Merriweather', serif;
+    --font-primary: var(--font-inter);
+    --font-display: var(--font-syne);
+    --font-ui: var(--font-outfit);
   }
 
   body {
-    @apply bg-[#F9FAFB] text-[#1F2937] font-sans;
+    @apply bg-[#F9FAFB] text-[#1F2937];
+    font-family: var(--font-primary), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), var(--font-primary), system-ui, sans-serif;
+  }
+
+  .brand-name, .logo-heading {
+    font-family: var(--font-display), var(--font-primary), system-ui, sans-serif;
   }
 
   h1 {
@@ -69,4 +79,95 @@
 html {
   scrollbar-color: #22c55e rgba(10, 15, 20, 0.4);
   scrollbar-width: auto;
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.15); }
+}
+
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4ade80, #22d3ee);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link-underline:hover::after,
+.nav-link-underline.active::after {
+  width: 80%;
+}
+
+.dropdown-item {
+  transition: all 0.18s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(74, 222, 128, 0.08);
+  padding-left: 18px;
+}
+
+.mobile-link {
+  transition: all 0.2s ease;
+  border-left: 2px solid transparent;
+}
+
+.mobile-link:hover {
+  border-left-color: #4ade80;
+  background: rgba(74, 222, 128, 0.05);
+  padding-left: 20px;
+}
+
+.cta-btn {
+  background-size: 200% auto;
+  transition: all 0.4s ease;
+  animation: pulseGlow 3s infinite;
+}
+
+.cta-btn:hover {
+  background-position: right center;
+  box-shadow: 0 0 24px rgba(74, 222, 128, 0.4);
+  transform: translateY(-1px);
+}
+
+.brand-name {
+  background: linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #4ade80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+  filter: drop-shadow(0 4px 12px rgba(34, 211, 238, 0.15));
 }

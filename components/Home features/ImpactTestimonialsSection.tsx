@@ -104,7 +104,7 @@ export default function ImpactTestimonialsSection() {
 
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
             >
               <span className="text-white">What We Build</span>{" "}
               <span
@@ -174,7 +174,7 @@ export default function ImpactTestimonialsSection() {
                   <div>
                     <h3
                       className="text-lg md:text-xl font-black text-white mb-3 leading-snug"
-                      style={{ fontFamily: "'Syne', sans-serif" }}
+                      style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
                     >
                       {p.title}
                     </h3>
@@ -208,7 +208,7 @@ export default function ImpactTestimonialsSection() {
 
             <h2
               className="text-3xl sm:text-4xl font-black text-white mb-3"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
             >
               Stories From the{" "}
               <span
@@ -348,7 +348,7 @@ export default function ImpactTestimonialsSection() {
 
             <h3
               className="text-2xl md:text-4xl font-black text-white mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
             >
               Your Next Breakthrough
               <br />
@@ -385,9 +385,7 @@ export default function ImpactTestimonialsSection() {
         </div>
       </div>
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
-      `}</style>
+      
     </section>
   );
 }

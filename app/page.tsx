@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main
       className="bg-[#F9FAFB] text-[#1F2937]"
-      style={{ fontFamily: "Inter, sans-serif" }}
+      style={{ fontFamily: "var(--font-primary), system-ui, sans-serif" }}
     >
       <HeroSection />
       <VisionProblemSection />

@@ -25,7 +25,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+254 793 056 960",
+    value: "+254791614036",
+    href: "https://wa.me/254791614036?text=hello%20VYQOR",
     gradient: ["#4ade80", "#22d3ee"],
   },
   {
@@ -68,7 +69,7 @@ export default function CTASection() {
 
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
             >
               <span className="text-white">Got a Vision?</span>{" "}
               <span
@@ -107,7 +108,7 @@ export default function CTASection() {
                 <div className="relative z-10">
                   <h3
                     className="text-xl md:text-2xl font-black text-white mb-3"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
                   >
                     Ship Faster. Scale Smarter.
                     <br />
@@ -141,9 +142,12 @@ export default function CTASection() {
 
               {/* Contact details */}
               <div className="grid sm:grid-cols-2 gap-3">
-                {contactDetails.map(({ icon: Icon, label, value, gradient }, i) => (
-                  <div
+                {contactDetails.map(({ icon: Icon, label, value, href, gradient }, i) => (
+                  <a
                     key={i}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group flex items-center gap-4 p-4 rounded-xl border border-white/8 bg-white/[0.03] hover:border-green-500/30 hover:bg-green-500/[0.04] transition-all duration-300"
                   >
                     <div
@@ -156,7 +160,7 @@ export default function CTASection() {
                       <p className="text-gray-400 text-sm font-medium">{label}</p>
                       <p className="text-white text-sm font-semibold">{value}</p>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
 
@@ -241,7 +245,7 @@ export default function CTASection() {
 
               <h2
                 className="text-2xl md:text-4xl font-black text-white mb-4 leading-tight"
-                style={{ fontFamily: "'Syne', sans-serif" }}
+                style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
               >
                 Your Competitors Are Already
                 <br />
@@ -283,9 +287,7 @@ export default function CTASection() {
         </div>
       </section>
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
-      `}</style>
+      
     </>
   );
 }

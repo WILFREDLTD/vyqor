@@ -129,8 +129,6 @@ export function ScheduleConsultationForm() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&display=swap');
-
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(16px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -243,7 +241,7 @@ export function ScheduleConsultationForm() {
               </div>
               <h1
                 className="text-3xl sm:text-4xl font-black text-white mb-2"
-                style={{ fontFamily: "'Syne', sans-serif" }}
+                style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
               >
                 Book Your{" "}
                 <span

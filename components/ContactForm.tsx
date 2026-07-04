@@ -71,7 +71,7 @@ export function ContactForm() {
       <div className="mb-7">
         <h3
           className="text-xl font-black text-white mb-1"
-          style={{ fontFamily: "'Syne', sans-serif" }}
+          style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
         >
           Send Us a Brief
         </h3>

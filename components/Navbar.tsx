@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { ChevronDown, ArrowRight, X, Menu, Zap } from "lucide-react";
 import Image from "next/image";
 import { servicesOffered } from "@/constants";
@@ -18,13 +19,20 @@ export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
   const [activeLink, setActiveLink] = React.useState("");
+  const [isNavigatingCTA, setIsNavigatingCTA] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
   const servicesRef = React.useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
 
   const servicesList = (servicesOffered || []).slice(0, 8).map((s: any) => ({
     label: s.title,
     icon: s.icon,
     href: "/#services",
   }));
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   // Scroll detection for sticky glass effect
   React.useEffect(() => {
@@ -50,94 +58,16 @@ export default function Navbar() {
     return () => { document.body.style.overflow = "unset"; };
   }, [isMobileMenuOpen]);
 
+  if (!hasMounted) {
+    return (
+      <>
+        <div className="h-16 md:h-[72px]" aria-hidden="true" />
+      </>
+    );
+  }
+
   return (
     <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Outfit:wght@600;700;800&display=swap');
-
-        @keyframes fadeSlideDown {
-          from { opacity: 0; transform: translateY(-8px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideInRight {
-          from { opacity: 0; transform: translateX(100%); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to   { opacity: 1; }
-        }
-        @keyframes shimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-        @keyframes pulseGlow {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
-          50%       { box-shadow: 0 0 0 6px rgba(74,222,128,0.15); }
-        }
-
-        .nav-link-underline {
-          position: relative;
-        }
-        .nav-link-underline::after {
-          content: '';
-          position: absolute;
-          bottom: -2px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 0;
-          height: 2px;
-          background: linear-gradient(90deg, #4ade80, #22d3ee);
-          border-radius: 2px;
-          transition: width 0.3s ease;
-        }
-        .nav-link-underline:hover::after,
-        .nav-link-underline.active::after {
-          width: 80%;
-        }
-
-        .dropdown-item {
-          transition: all 0.18s ease;
-        }
-        .dropdown-item:hover {
-          background: rgba(74,222,128,0.08);
-          padding-left: 18px;
-        }
-
-        .mobile-link {
-          transition: all 0.2s ease;
-          border-left: 2px solid transparent;
-        }
-        .mobile-link:hover {
-          border-left-color: #4ade80;
-          background: rgba(74,222,128,0.05);
-          padding-left: 20px;
-        }
-
-        .cta-btn {
-          background-size: 200% auto;
-          transition: all 0.4s ease;
-          animation: pulseGlow 3s infinite;
-        }
-        .cta-btn:hover {
-          background-position: right center;
-          box-shadow: 0 0 24px rgba(74,222,128,0.4);
-          transform: translateY(-1px);
-        }
-
-        .brand-name {
-          background: linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #4ade80 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-size: 1.5rem;
-          font-weight: 800;
-          letter-spacing: -0.5px;
-          text-shadow: 0 0 30px rgba(74,222,128,0.3);
-          filter: drop-shadow(0 4px 12px rgba(34,211,238,0.15));
-        }
-      `}</style>
-
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
@@ -176,7 +106,7 @@ export default function Navbar() {
                   style={{ background: "linear-gradient(135deg, #4ade80, #22d3ee)", opacity: 0.06, filter: "blur(8px)" }}
                 />
                 <Image
-                  src="/vyqor.png"
+                  src="/logo_vyqor.png"
                   alt="VYQOR LABS"
                   width={200}
                   height={200}
@@ -185,7 +115,7 @@ export default function Navbar() {
               </div>
               <span
                 className="brand-name hidden sm:block ml-3"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
+                style={{ fontFamily: "var(--font-ui), var(--font-primary), system-ui, sans-serif" }}
               >
                 VYQOR LABS
               </span>
@@ -282,17 +212,34 @@ export default function Navbar() {
 
             {/* ── CTA ── */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link
-                href="/schedule-consultation"
+              <button
+                type="button"
+                onClick={async () => {
+                  setIsNavigatingCTA(true);
+                  await router.push('/schedule-consultation');
+                }}
+                disabled={isNavigatingCTA}
                 className="cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-black"
                 style={{
                   background: "linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #4ade80 100%)",
                   backgroundSize: "200% auto",
                 }}
               >
-                Get a Free Scope
-                <ArrowRight size={13} />
-              </Link>
+                {isNavigatingCTA ? (
+                  <>
+                    <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <circle cx="12" cy="12" r="10" stroke="black" strokeWidth="3" strokeOpacity="0.15" />
+                      <path d="M22 12a10 10 0 0 1-10 10" stroke="black" strokeWidth="3" strokeLinecap="round" />
+                    </svg>
+                    Loading...
+                  </>
+                ) : (
+                  <>
+                    Get a Free Scope
+                    <ArrowRight size={13} />
+                  </>
+                )}
+              </button>
             </div>
 
             {/* ── Mobile burger ── */}
@@ -364,7 +311,7 @@ export default function Navbar() {
                 <Image src="/vyqor.png" alt="VYQOR LABS" width={100} height={100} className="w-8 h-8 rounded-full" />
                 <span
                   className="text-xl font-black text-white"
-                  style={{ fontFamily: "'Syne', sans-serif" }}
+                  style={{ fontFamily: "var(--font-display), var(--font-primary), system-ui, sans-serif" }}
                 >
                   VYQOR LABS
                 </span>
@@ -439,18 +386,34 @@ export default function Navbar() {
               className="p-5 border-t"
               style={{ borderColor: "rgba(74,222,128,0.1)" }}
             >
-              <Link
-                href="/schedule-consultation"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button
+                type="button"
+                onClick={async () => {
+                  setIsNavigatingCTA(true);
+                  await router.push('/schedule-consultation');
+                }}
+                disabled={isNavigatingCTA}
                 className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-black text-sm transition-all"
                 style={{
                   background: "linear-gradient(135deg, #4ade80, #22d3ee)",
                   boxShadow: "0 0 24px rgba(74,222,128,0.3)",
                 }}
               >
-                Get a Free Scope
-                <ArrowRight size={14} />
-              </Link>
+                {isNavigatingCTA ? (
+                  <>
+                    <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <circle cx="12" cy="12" r="10" stroke="black" strokeWidth="3" strokeOpacity="0.15" />
+                      <path d="M22 12a10 10 0 0 1-10 10" stroke="black" strokeWidth="3" strokeLinecap="round" />
+                    </svg>
+                    Loading...
+                  </>
+                ) : (
+                  <>
+                    Get a Free Scope
+                    <ArrowRight size={14} />
+                  </>
+                )}
+              </button>
               <p className="text-center text-xs text-gray-600 mt-3">
                 No commitment · Reply within 24 hrs
               </p>
